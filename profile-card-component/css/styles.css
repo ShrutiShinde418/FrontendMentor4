@@ -1,0 +1,110 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: hsl(185deg, 75%, 39%);
+}
+
+img[alt="top pattern"] {
+  transform: translate(-35rem, -20rem);
+  position: fixed;
+}
+
+img[alt="bottom pattern"] {
+  position: fixed;
+  transform: translate(25rem, 34rem);
+}
+
+.card {
+  display: flex;
+  place-self: center;
+  flex-direction: column;
+  align-items: stretch;
+  height: 400px;
+  position: relative;
+  max-width: 380px;
+  border-radius: 1rem;
+  background-color: #fff;
+}
+.card .card__cover {
+  display: grid;
+  grid-template-rows: 160px 55px 1fr;
+  margin-bottom: 1rem;
+  width: 100%;
+  border-bottom: 0.3px solid hsl(0deg, 0%, 59%);
+}
+.card .card__cover img {
+  max-width: 100%;
+  height: auto;
+}
+.card .card__cover img:first-of-type {
+  width: 400px;
+  border-radius: 1rem 1rem 0 0;
+}
+.card .card__cover img:last-of-type {
+  border-radius: 50%;
+  transform: translateY(-65px);
+  justify-self: center;
+  border: 7px solid #fff;
+}
+.card .card__cover h1 {
+  text-align: center;
+  margin: 0;
+  font-family: "Kumbh Sans";
+  color: hsl(229deg, 23%, 23%);
+  font-size: 18px;
+}
+.card .card__cover h1 span {
+  font-weight: 400;
+  color: hsl(0deg, 0%, 59%);
+}
+.card .card__cover h2 {
+  font-family: "Kumbh Sans";
+  text-align: center;
+  font-weight: 400;
+  color: hsl(0deg, 0%, 59%);
+  font-size: 15px;
+  margin-bottom: 1.6rem;
+}
+.card .card__content {
+  display: flex;
+  font-family: "Kumbh Sans";
+  justify-content: space-evenly;
+  text-align: center;
+  flex: 1;
+}
+.card .card__content ul {
+  list-style-type: none;
+  padding: 0;
+}
+.card .card__content .stats {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+  color: hsl(229deg, 23%, 23%);
+}
+.card .card__content .sub-heading {
+  font-size: 1rem;
+  color: hsl(227deg, 10%, 46%);
+  font-size: 12px;
+  letter-spacing: 0.15em;
+}
+
+@media (max-width: 500px) {
+  img[alt="top pattern"] {
+    transform: translate(-32rem, -20rem);
+  }
+
+  img[alt="bottom pattern"] {
+    transform: translate(28rem, 25rem);
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

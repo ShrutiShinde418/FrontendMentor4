@@ -1,0 +1,124 @@
+$dark-cyan: hsl(185, 75%, 39%);
+$blue: hsl(229, 23%, 23%);
+$grayish-blue: hsl(227, 10%, 46%);
+$dark-grey: hsl(0, 0%, 59%);
+$br-radius: 1rem;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: $dark-cyan;
+}
+
+img[alt="top pattern"] {
+  transform: translate(-35rem, -20rem);
+  position: fixed;
+}
+
+img[alt="bottom pattern"] {
+  position: fixed;
+  transform: translate(25rem, 34rem);
+}
+
+.card {
+  display: flex;
+  place-self: center;
+  flex-direction: column;
+  align-items: stretch;
+  height: 400px;
+  position: relative;
+  max-width: 380px;
+  border-radius: $br-radius;
+  background-color: #fff;
+  .card__cover {
+    display: grid;
+    grid-template-rows: 160px 55px 1fr;
+    margin-bottom: $br-radius;
+    width: 100%;
+    border-bottom: 0.3px solid $dark-grey;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    img:first-of-type {
+      width: 400px;
+      border-radius: $br-radius $br-radius 0 0;
+    }
+
+    img:last-of-type {
+      border-radius: 50%;
+      transform: translateY(-65px);
+      justify-self: center;
+      border: 7px solid #fff;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 0;
+      font-family: "Kumbh Sans";
+      color: $blue;
+      font-size: 18px;
+
+      span {
+        font-weight: 400;
+        color: $dark-grey;
+      }
+    }
+
+    h2 {
+      font-family: "Kumbh Sans";
+      text-align: center;
+      font-weight: 400;
+      color: $dark-grey;
+      font-size: 15px;
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  .card__content {
+    display: flex;
+    font-family: "Kumbh Sans";
+    justify-content: space-evenly;
+    text-align: center;
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .stats {
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
+      color: $blue;
+    }
+    
+    .sub-heading {
+      font-size: $br-radius;
+      color: $grayish-blue;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+    }
+    flex: 1;
+  }
+}
+
+@media (max-width: 500px) {
+  img[alt="top pattern"] {
+    transform: translate(-32rem, -20rem);
+  }
+
+  img[alt="bottom pattern"] {
+    transform: translate(28rem, 25rem);
+  }
+}
