@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./css/index.css" />
+    <title>Frontend Mentor | Results summary component</title>
+  </head>
+  <body class="font-custom min-h-screen grid me:place-items-center">
+    <div class="card">
+      <div class="result">
+        <h1 class="text-pale-blue font-bold text-xl pb-7 opacity-70">
+          Your Result
+        </h1>
+        <div class="circle">
+          <h1 class="font-extrabold text-6xl" id="score">76</h1>
+          <h2 class="opacity-70">of 100</h2>
+        </div>
+        <h2 class="text-pale-blue text-2xl font-bold mb-2">Great</h2>
+        <h3 class="text-center text-pale-blue opacity-70">
+          You scored higher than 65% of the people who have taken these tests.
+        </h3>
+      </div>
+      <div class="bg-white rounded-r-3xl p-9 flex flex-col">
+        <h4 class="text-gray-blue font-bold text-xl mb-5">Summary</h4>
+        <div class="flex flex-col me:gap-3 mb-10 gap-4">
+          <div class="summary_item bg-light-red">
+            <div class="flex">
+              <img
+                src="./assets/images/icon-reaction.svg"
+                alt="Reaction"
+                class="pr-2"
+              />
+              <h5 class="text-light-red">Reaction</h5>
+            </div>
+            <h6 class="text-gray-blue">
+              <span id="reaction">80</span>&nbsp;
+              <span class="opacity-60">/&nbsp;100</span>
+            </h6>
+          </div>
+          <div class="summary_item bg-orangey-yellow">
+            <div class="flex">
+              <img
+                src="./assets/images/icon-memory.svg"
+                alt="Reaction"
+                class="pr-2"
+              />
+              <h5 class="text-orangey-yellow">Memory</h5>
+            </div>
+            <h6 class="text-gray-blue">
+              <span id="memory">92</span>&nbsp;
+              <span class="opacity-60">/&nbsp;100</span>
+            </h6>
+          </div>
+          <div class="summary_item bg-teal">
+            <div class="flex">
+              <img
+                src="./assets/images/icon-verbal.svg"
+                alt="Reaction"
+                class="pr-2"
+              />
+              <h5 class="text-teal">Verbal</h5>
+            </div>
+            <h6 class="text-gray-blue">
+              <span id="verbal">61</span>&nbsp;
+              <span class="opacity-60">/&nbsp;100</span>
+            </h6>
+          </div>
+          <div class="summary_item bg-cobalt-blue">
+            <div class="flex">
+              <img
+                src="./assets/images/icon-visual.svg"
+                alt="Reaction"
+                class="pr-2"
+              />
+              <h5 class="text-cobalt-blue">Visual</h5>
+            </div>
+            <h6 class="text-gray-blue">
+              <span id="visual">72</span>&nbsp;
+              <span class="opacity-60">/&nbsp;100</span>
+            </h6>
+          </div>
+        </div>
+        <button type="button" class="btn">Continue</button>
+      </div>
+    </div>
+  </body>
+  <script>
+    const reaction = document.getElementById("reaction");
+    const verbal = document.getElementById("verbal");
+    const memory = document.getElementById("memory");
+    const visual = document.getElementById("visual");
+    const score = document.getElementById("score");
+    let results = [reaction, memory, verbal, visual];
+    let sum = 0;
+    fetch("./data.json")
+      .then((res) => res.json())
+      .then((data) => {
+        for (let i = 0; i < data.length; i++) {
+          sum = sum + data[i]["score"];
+          results[i].innerHTML = data[i]["score"];
+        }
+        score.innerHTML = Math.round((sum / 400) * 100);
+      });
+  </script>
+</html>

@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.card {
+  @apply grid me:grid-cols-2 me:shadow-md rounded-3xl me:max-w-[40rem] max-w-full me:translate-y-0 -translate-y-5;
+}
+
+.result {
+  @apply bg-gradient-to-b from-slate-blue to-royal-blue p-9 flex flex-col items-center rounded-3xl justify-evenly;
+}
+
+.circle {
+  @apply bg-gradient-to-b from-violet to-persian-blue rounded-full px-12 py-10 text-center text-pale-blue mb-6;
+}
+
+.summary_item {
+  @apply flex justify-between font-bold bg-opacity-5 p-3 rounded-lg;
+}
+
+.btn {
+  @apply bg-gray-blue text-pale-blue py-3 px-9 font-bold rounded-3xl hover:bg-gradient-to-b from-slate-blue to-royal-blue;
+}
