@@ -43,6 +43,20 @@ Users should be able to:
 ### What I learned
 
 - SASS
+- Interpolation and map-get() in SASS
+
+```scss
+@each $index, $primary-color in $cards {
+    .card-#{$index} {
+      background-color: $primary-color;
+      padding: 2.85rem 0 2.85rem 2.85rem;
+      border-radius: map-get($border-radii, $index);
+      button {
+        @include cardButton($primary-color);
+      }
+    }
+  }
+```
 
 ## Author
 

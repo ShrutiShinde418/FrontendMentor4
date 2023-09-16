@@ -1,0 +1,17 @@
+$bright-orange: hsl(31, 77%, 52%);
+$dark-cyan: hsl(184, 100%, 22%);
+$very-dark-cyan: hsl(179, 100%, 13%);
+$white: hsla(0, 0%, 100%, 0.75);
+$light-gray: hsl(0, 0%, 95%);
+$lexend: "Lexend Deca";
+$bg-shoulders-display: "Big Shoulders Display";
+$cards: (
+  1: $bright-orange,
+  2: $dark-cyan,
+  3: $very-dark-cyan,
+);
+$border-radii: (
+  1: 0.5rem 0 0 0.5rem,
+  2: none,
+  3: 0 0.5rem 0.5rem 0,
+);
